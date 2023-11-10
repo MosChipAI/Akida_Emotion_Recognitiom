@@ -1,0 +1,15 @@
+<div class="sidebar-item">
+  <div class="nav-link text-truncate">
+    <i class="bi bi-collection"></i><span class="ms-1 d-none d-sm-inline">Number of new classes</span>
+  </div>
+  <input id="max-classes" type="number" value="5" min="1" max="20" step="1" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+  <div class="nav-link text-truncate">
+    <i class="bi bi-asterisk"></i><span class="ms-1 d-none d-sm-inline">Number of neurons</span>
+  </div>
+  <input id="max-neurons" type="number" value="1" min="1" max="1000" step="1" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+  <div class="nav-link text-truncate">
+    <i class="bi bi-camera"></i><span class="ms-1 d-none d-sm-inline">Number of shots/samples</span>
+  </div>
+  <input id="max-shots" type="number" value="5" min="0" max="20" step="1"
+  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+</div>

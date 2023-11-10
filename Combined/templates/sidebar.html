@@ -1,0 +1,31 @@
+<button class="btn float-begin" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" role="button">
+  <i class="bi bi-gear-fill fs-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"></i>
+</button>
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="false">
+  <div class="offcanvas-header">
+    <i class="bi bi-gear"></i><h3 class="offcanvas-title d-none d-sm-block" id="offcanvas">Settings</h3>
+    <button type="button" class="btn-close text-reset bi bi-x-lg" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body px-0">
+    {% if hw_enabled == True %}
+    <div class="sidebar-item">
+      <div class="nav-link text-truncate">
+        <i class="bi bi-graph-up"></i><span class="ms-1 d-none d-sm-inline">Enable HW Stats</span>
+        <select id=hw-data class="form-select" aria-label="HW Stats">
+          <option value="None">None</option>
+          <option value="Power">Power/FPS</option>
+          <option value="Efficiency">Efficiency</option>
+        </select>
+      </div>
+    </div>
+    {% endif %}
+    <!-- Insert condition and custom sidebard -->
+    {% if demo_app_title == "Detection Demo" %}
+        {% include "settings_detection_demo.html" %}
+    {% elif demo_app_title == "Emotion Demo" %}
+        {% include "settings_face_demo.html" %}
+    {% elif demo_app_title == "Face Demo" %}
+        {% include "settings_face_demo.html" %}
+    {% endif %}
+  </div>
+</div>

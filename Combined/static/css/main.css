@@ -1,0 +1,160 @@
+/* Declare BRN Font (Regular/Bold) - Titillium Web */
+@font-face {
+  font-family: "Titillium Web";
+  src: url("fonts/TitilliumWeb-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Titillium Web";
+  src: url("fonts/TitilliumWeb-Bold.ttf") format("ttf");
+  font-weight: bold;
+}
+
+/* Main CSS Part */
+body {
+#background-image: url("../images/moschiplogo_2.jpg");
+background-image: url("../images/ai_background/moschip_v1.jpeg");
+	background-repeat: no-repeat;
+		#background-size : cover;
+		position: relative;
+        background-size:100% 100vh;
+    /*background: rgba(240, 240, 240, 1);
+    margin-bottom: 3em;
+    overflow: hidden;*/
+}
+
+h1 {
+    color: rgba(5, 22, 67, 1);
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 1em;
+}
+
+h2 {
+    font-size: 3em;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+/* Common style directive for main container and camera image */
+.container {
+    /*width: auto;
+    max-width: 65vh;
+    padding: 0 15px;*/
+    width: 80%;
+	height:50%;
+}
+
+.camera-img{
+    /*width: 100%;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    */
+    display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+    margin-top: 60px ;
+	width: 60%;
+	height:70%;
+}
+
+/* Common style directive for footer */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(5, 22, 67, 1);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 36px 0px, rgba(0, 0, 0, 0.02) 0px 0px 0px 0px;
+    line-height: 2em;
+}
+
+.footer-logo {
+    background: url("../images/brainchip_logo.png");
+    background-repeat: no-repeat;
+    background-position: center 1em;
+    display: block;
+    background-size: 20%;
+    height: 3.5em;
+}
+
+.copyright {
+    font-family: "Titillium Web";
+    color: white;
+    text-align: center;
+}
+
+/* Styling output-label that display akida outcome */
+#output-label {
+    text-align: center;
+    margin-top: 1em;
+    display: inherit;
+    height: 1.5em;
+    font-size: 15px; /*.5em;*/
+    color:white;
+}
+
+/* Styling power-label that display akida HW power measures */
+#power-label {
+    font-style: italic;
+    font-weight: bold;
+}
+
+#power-label p {
+    margin-bottom: unset;
+}
+
+/* Styling fps-label that displays akida HW FPS */
+#fps-label {
+    font-style: italic;
+}
+
+/* Styling sidebar for settings/properties */
+.offcanvas {
+    font-family: "Titillium Web";
+    color: white;
+    background: rgba(7, 11, 22, 1);
+}
+
+.nav-link {
+    color: white;
+}
+
+.sidebar-item {
+    margin: 1em;
+}
+
+.sidebar-item input {
+    width: 100%;
+}
+
+.mb-3 {
+    margin-top: 2em;
+}
+/*
+.btn-close {
+    width: inherit;
+    height: inherit;
+}
+*/
+/* Styling loader for Object/Face spinner */
+.loader {
+    visibility: hidden;
+}
+
+#loader-text {
+    margin-top: revert;
+    margin-bottom: 1em;
+    font-weight: bold;
+    margin-left: 1em;
+}
+
+/* Styling Learn button for EdgeDemo*/
+/*.btn-outline-secondary {
+    background: rgba(5, 22, 67, 1);
+    color: rgba(255, 255, 255, 1);
+}
+
+.btn-outline-secondary:hover {
+    background: transparent;
+    color: rgba(5, 22, 67, 1);
+}
+*/

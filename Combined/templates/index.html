@@ -1,0 +1,91 @@
+<!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" name="viewport" />
+        <!-- Display app title -->
+        <title>{{ demo_app_title }}</title>
+        <!-- Load stylesheets - Bootstrap and main CSS -->
+        <link href='/Combined/static/css/bootstrap.min.css' rel="stylesheet">
+        <link href='/Combined/static/css/bootstrap-icons.css' rel="stylesheet">
+        <link href='/Combined/static/css/toastr.min.css' rel="stylesheet">
+        <link href="/Combined/static/css/main.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="row">
+                <div class="col">
+                    {% if demo_app_title != "Face Demo" or demo_app_title != "Emotion Demo" %}
+                        {% include "sidebar.html" %}
+                    {% else %}
+                        {% if hw_enabled == True %}
+                            {% include "sidebar.html" %}
+                        {% endif %}
+                    {% endif %}
+                </div>
+                <div class="col-6">
+                    <h1 style="color:white;" class="text-center">{{ demo_app_title }}</h1>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+        </header>
+        <main class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="center-block">
+                        <div id="videodiv">
+                            <img class="camera-img center-block" src="{{ url_for('video_feed') }}">
+                            <!--<h2 style = "color:white;" class="text-center">hello</h2>-->
+                            <div id = "output-label"></div>
+                            <div id="power-label"></div>
+                            <div id="fps-label"></div>
+                        
+                            <div class="d-flex align-items-center loader">
+                              <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+                              <p id="loader-text"></p>
+                            </div>
+                        </div>
+                        <!-- Condition to add output-label div
+                            "Classification Demo" -->
+                        {% if demo_app_title == "Face Demo" %}
+                        <div id="output-label"></div>
+                        <!--
+                        {% elif demo_app_title == "Edge Demo"%}
+                            {% include "edge_demo_widget.html" %}
+                        {% elif demo_app_title == "Face Demo"%}
+                            {% include "face_demo_widget.html" %}
+                        -->
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--<footer class="footer">
+            <div class=container>
+                <span class="footer-logo"></span>
+                <div class="copyright">
+                    © COPYRIGHT <script>document.write(new Date().getFullYear());</script>   |   ALL RIGHTS RESERVED
+                </div>
+            </div>
+        </footer>
+        -->
+    </body>
+    <!-- Load JS - JQuery, SocketIO and main JS -->
+    <script src="/Combined/static/js/jquery.min.js"></script>
+    <script src="/Combined/static/js/bootstrap.min.js"></script>
+    <script src="/Combined/static/js/socket.io.min.js"></script>
+    <script src="/Combined/static/js/toastr.min.js"></script>
+    <script src="/Combined/static/js/utils.js"></script>
+    {% if demo_app_title == "Classification Demo" %}
+        <script src="/Combined/static/js/classification_demo.js"></script>
+    {% elif demo_app_title == "Detection Demo" %}
+        <script src="/Combined/static/js/detection_demo.js"></script>
+    {% elif demo_app_title == "Emotion Demo" %}
+        <script src="/Combined/static/js/classification_demo.js"></script>
+    {% elif demo_app_title == "Face Demo" %}
+        <script src="/Combined/static/js/classification_demo.js"></script>
+    {% endif %}
+    </html>
