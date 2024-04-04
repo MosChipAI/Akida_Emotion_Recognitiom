@@ -1,0 +1,1 @@
+This project aims to leverage Akida's neuromorphic processing capabilities for real-time emotion detection, utilizing a custom-designed model trained on diverse datasets to accurately identify and classify a person's emotional expressions from facial cues, gestures, and voice inputs.
